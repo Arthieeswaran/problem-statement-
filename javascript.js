@@ -1,53 +1,15 @@
-console.log("MENU");
-console.log("1. Pizza");
-console.log("2. Burger");
-console.log("3. Biriyani");
-console.log("4. Apple juice");
-console.log("5. Idli");
-
-let choice = prompt("Enter your choice");
-let rate = 0; 
-let n, cost; 
-
-switch(choice) {
-    case "1": 
-        n = prompt("Enter the required quantity");
-        cost = 200;
-        rate = cost * n;
-        break;
-
-    case "2": 
-        n = prompt("Enter the required quantity");
-        cost = 300;
-        rate = cost * n;
-        break;
-
-    case "3": 
-        n = prompt("Enter the required quantity");
-        cost = 300;
-        rate = cost * n;
-        break;
-
-    case "4": 
-        n = prompt("Enter the required quantity");
-        cost = 250;
-        rate = cost * n;
-        break;
-
-    case "5": 
-        n = prompt("Enter the required quantity");
-        cost = 100;
-        rate = cost * n;
-        break;
-
-    default:
-        console.log("Invalid choice");
-        break;
+let n = parseInt(prompt("n:"));
+let chocolates = [];
+for (let i = 0; i < n; i++) {
+    let chocolate = parseInt(prompt(`Enter the value of chocolate packet ${i + 1} (0 for empty packet):`));
+    chocolates.push(chocolate);
 }
-
-if(rate > 500){
-    rate = rate - (rate * (10 / 100)); 
-    console.log( rate);
-} else {
-    console.log( rate);
+let result = new Array(n).fill(0);
+let index = 0;
+for (let i = 0; i <n; i++) {
+    if (chocolates[i] !== 0) {
+        result[index] = chocolates[i];
+        index++;
+    }
 }
+console.log("Modified array of chocolates:", result);
